@@ -1,0 +1,20 @@
+library(dplyr)
+library(tidyr)
+
+df <- read.csv("C:/Users/raymart.biasbas/Documents/Proyekto/AB Testing Data/categories.csv",,
+               header = TRUE,
+               encoding = 'UTF-8') 
+
+colnames(df)[1] <- "Category"
+
+df_pivot <- df |>
+  pivot_longer(cols = c('ID','CN','TH','VN','KR','JP'),
+               names_to = "Language",
+               values_to = "Name")
+
+
+library(readr)
+
+
+write_excel_csv(df_pivot
+                ,file = "categories.csv")

@@ -1,0 +1,2 @@
+"0","cor1 <- paste(""Average Wager USD vs. Banker Win % Correlation:"",cor(df_filtered$avg_wager,df_filtered$banker_win_pct))"
+"0","cor2 <- paste(""Average Wager USD vs. Player Win % Correlation:"",cor(df_filtered$avg_wager,df_filtered$player_win_pct))"

@@ -1,0 +1,135 @@
+library(odbc)
+library(DBI)
+library(keyring)
+library(dplyr)
+library(ggplot2)
+library(DBI)
+library(plotly)
+
+con <- dbConnect(odbc(), Driver = "SQL Server Native Client 11.0",
+                 Server = "172.24.84.7", UID = key_get("db_user"), PWD = key_get("db_pass"))
+
+df <- dbGetQuery(con,"
+        SELECT
+        dp.id playerid
+        ,dp.username
+        ,td.BetCode
+        ,dc.Code CurrencyCode
+        ,COUNT(DISTINCT td.BetRecID) bet_count
+        ,COUNT(distinct(case when td.BetResult = 'W' then td.BetRecID end)) win_bet_count
+        ,avg(td.BetAmt/fx.Rate) avg_wager
+        ,max(td.BetAmt/fx.Rate) max_wager
+        ,sum(td.BetAmt/fx.Rate) turnover_usd
+        ,sum((WinAmt*-1)/fx.Rate) ggr_usd
+        FROM MLD.dbo.UserBetHist td (NOLOCK)
+        INNER JOIN MLD.dbo.Tables tbl (NOLOCK) on td.TableNo = tbl.TableNumber
+        INNER JOIN DWH.WH.DimPlayer dp (NOLOCK) on td.UserName = cast(dp.id as varchar)
+        INNER JOIN DWH.WH.DimCurrency dc with (NOLOCK) on dp.CurrencyId = dc.Id
+        --INNER JOIN DWH.WH.DimTime dt WITH (NOLOCK) ON cast(convert(varchar, BetDate, 112) + FORMAT(BetDate,'HH') as int) = dt.Id
+        LEFT JOIN DWH.WH.FactExchangeRates fx WITH (NOLOCK) ON cast(convert(varchar, BetDate, 112) + '00' as int) = fx.TimeId and dp.CurrencyId  = fx.CurrencyId
+        where 1=1
+        and dp.BrandId = 2
+        and dp.IsInternalAccount = 0
+        and dp.RiskLevelName not in ('Test','Affiliate')
+        and tbl.Studio IN ('Euro','VIVO','Std1')
+        and td.GameType = 'Ba' --Baccarat only
+        and td.BetDate >= '2021-01-01'
+        and td.BetDate < '2023-05-01'
+        and td.BetCode in ('BaBank','BaDeal')
+        GROUP BY
+        dp.id
+        ,dp.username
+        ,td.BetCode
+        ,dc.Code
+")
+
+save(df,file = "Bacarrat.RData")
+
+#
+
+load("Bacarrat.RData")
+
+
+df_agg <-df |>
+  group_by(playerid) |>
+  reframe(avg_wager = sum(turnover_usd,na.rm = T)/sum(bet_count,na.rm = T),
+          bet_count = sum(bet_count,na.rm = T),
+          banker_win_count = sum(ifelse(BetCode == "BaBank",win_bet_count,0),na.rm = T),
+          player_win_count = sum(ifelse(BetCode == "BaDeal",win_bet_count,0),na.rm = T),
+          turnover_usd = sum(turnover_usd,na.rm = T),
+          ggr_usd = sum(ggr_usd,na.rm = T),
+          banker_win_pct = as.numeric(banker_win_count/bet_count),
+          player_win_pct = as.numeric(player_win_count/bet_count),
+          hold_pct = as.numeric(ggr_usd/turnover_usd)) |>
+  ungroup()
+
+
+
+df_filtered <- df_agg |>
+  filter(bet_count > 5)
+
+ cor(df_filtered$avg_wager,df_filtered$banker_win_pct)
+
+
+ cor(df_filtered$avg_wager,df_filtered$player_win_pct)
+
+
+
+ cor(df_filtered$turnover_usd,df_filtered$banker_win_pct)
+
+
+cor(df_filtered$turnover_usd,df_filtered$player_win_pct)
+
+
+
+
+banker_scatterplot <- ggplot(df_filtered,aes(x = avg_wager, y = banker_win_pct,
+                                             text = paste("Player ID:",playerid,
+                                                          "\nAverage Wager USD:",scales::dollar(avg_wager,accuracy = 0.01),
+                                                          "\nWin %:",scales::percent(banker_win_pct,accuracy = 0.01)))) +
+  geom_point(color = "blue") + 
+  geom_hline(yintercept = 0.45843, color= "red") +
+  labs(x = "Average Wager USD",
+       y = "Win %",
+       title = "Banker Average Wager USD vs. Win %")+
+  scale_x_continuous(label = scales::dollar)+
+  scale_y_continuous(label = scales::percent)+
+  theme_bw() +
+  theme(panel.grid = element_blank(),
+        plot.title = element_text(face = "bold"))
+
+banker_scatterplot<- ggplotly(banker_scatterplot,tooltip = "text") |>
+  config(displayModeBar = FALSE)
+
+
+player_scatterplot <- ggplot(df_filtered,aes(x = avg_wager, y = player_win_pct,
+                                             text = paste("Player ID:",playerid,
+                                                          "\nAverage Wager USD:",scales::dollar(avg_wager,accuracy = 0.01),
+                                                          "\nWin %:",scales::percent(player_win_pct,accuracy = 0.01)))) +
+  geom_point(color = "blue") + 
+  geom_hline(yintercept = 0.44615, color= "red") +
+  labs(x = "Average Wager USD",
+       y = "Win %",
+       title = "Player Average Wager USD vs. Win %")+
+  scale_x_continuous(label = scales::dollar)+
+  scale_y_continuous(label = scales::percent)+
+  theme_bw() +
+  theme(panel.grid = element_blank(),
+        plot.title = element_text(face = "bold")) 
+
+  
+player_scatterplot<- ggplotly(player_scatterplot,tooltip = "text") |>
+  config(displayModeBar = FALSE)
+
+subplot(player_scatterplot,banker_scatterplot,nrows = 1)
+
+
+
+
+  
+  
+  
+
+
+  
+

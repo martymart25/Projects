@@ -1,0 +1,23 @@
+"0","ld_per_player_curr <- ld_cleaned |>"
+"0","  group_by(Playerid,Currencycode) |>"
+"0","  reframe(LT_Active_Days = sum(`Active Days Per Month`),"
+"0","         LT_Bet_Count = sum(`Bet Count`),"
+"0","         LT_Turnover_USD = sum(`Turnover Usd`),"
+"0","         LT_GGR_USD = sum(`Ggr Usd`)) |>"
+"0","  ungroup() |>"
+"0","  group_by(as.factor(Currencycode)) |>"
+"0","  mutate(LT_Active_Days_scale = standardize(LT_Active_Days,robust = TRUE),"
+"0","       LT_Bet_Count_scale = standardize(LT_Bet_Count,robust = TRUE),"
+"0","       LT_Turnover_USD_scale = standardize(LT_Turnover_USD,robust = TRUE),"
+"0","       LT_GGR_USD_scale = standardize(LT_GGR_USD,robust = TRUE))"
+"1","[1m[33mError[39m in `mutate()`:[22m
+[38;5;255m[36mi[38;5;255m In argument: `LT_Active_Days_scale = standardize(LT_Active_Days, robust =
+  TRUE)`.[39m
+[1mCaused by error:[22m
+[38;5;255m[33m![38;5;255m `LT_Active_Days_scale` must return compatible vectors across groups.
+[36mi[38;5;255m Result of type <dw_transformer> for group 1: `as.factor(Currencycode) = CNY`.
+[36mi[38;5;255m Result of type <dw_transformer> for group 2: `as.factor(Currencycode) = IDR`.[39m
+Backtrace:
+[90m  1. [39m[1mdplyr[22m::mutate(...)
+[90m 20. [39mdplyr (local) [1m[94m`<fn>`([39m[22m`<vctrs__2>`[1m[94m)[39m[22m
+"

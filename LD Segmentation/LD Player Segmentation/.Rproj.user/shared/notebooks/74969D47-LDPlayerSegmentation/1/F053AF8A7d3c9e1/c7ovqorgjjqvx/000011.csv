@@ -1,0 +1,8 @@
+"0","test <- ld_cleaned |>"
+"0","  group_by(Playerid,`Game Type`,`Vendor Name`) |>"
+"0","  arrange(`Activity Month`) |>"
+"0","  mutate(LT_Active_Days = cumsum(`Active Days Per Month`),"
+"0","         LT_Bet_Count = cumsum(`Bet Count`),"
+"0","         LT_Turnover_USD = cumsum(`Turnover Usd`),"
+"0","         LT_GGR_USD = cumsum(`Ggr Usd`))"
+"0",""

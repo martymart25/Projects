@@ -1,0 +1,13 @@
+name: Test
+title: Test
+username:
+account: bi-team
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 9353667
+bundleId: 7379799
+url: https://bi-team.shinyapps.io/Test/
+when: 1687525543.2844
+lastSyncTime: 1687525543.28441
+asMultiple: FALSE
+asStatic: FALSE

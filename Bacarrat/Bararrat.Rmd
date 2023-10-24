@@ -1,0 +1,224 @@
+---
+output: slidy_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+if(! require(odbc)) install.packages( "odbc")
+if(! require(DBI)) install.packages( "DBI")
+if(! require(keyring)) install.packages( "keyring")
+if(! require(dplyr)) install.packages( "dplyr")
+if(! require(ggplot2)) install.packages( "ggplot2")
+if(! require(DBI)) install.packages( "DBI")
+if(! require(plotly)) install.packages( "plotly")
+if(! require(tidyr)) install.packages( "tidyr")
+if(! require(manipulateWidget)) install.packages( "manipulateWidget")
+
+options(repr.plot.width = 3, repr.plot.height =3)
+load("Bacarrat.RData")
+df_agg <-df |>
+  group_by(playerid,username,CurrencyCode) |>
+  reframe(avg_wager = sum(turnover_usd,na.rm = T)/sum(bet_count,na.rm = T),
+          bet_count = sum(bet_count,na.rm = T),
+          banker_win_count = sum(ifelse(BetCode == "BaBank",win_bet_count,0),na.rm = T),
+          player_win_count = sum(ifelse(BetCode == "BaDeal",win_bet_count,0),na.rm = T),
+          banker_ggr_usd = sum(ifelse(BetCode == "BaBank",ggr_usd,0),na.rm = T),
+          player_ggr_usd = sum(ifelse(BetCode == "BaDeal",ggr_usd,0),na.rm = T),
+          banker_turnover_usd = sum(ifelse(BetCode == "BaBank",turnover_usd,0),na.rm = T),
+          player_turnover_usd = sum(ifelse(BetCode == "BaDeal",turnover_usd,0),na.rm = T),
+          max_wager_usd = max(max_wager,na.rm = T),
+          turnover_usd = sum(turnover_usd,na.rm = T),
+          ggr_usd = sum(ggr_usd,na.rm = T),
+          banker_win_pct = as.numeric(banker_win_count/bet_count),
+          player_win_pct = as.numeric(player_win_count/bet_count),
+          banker_hold_pct = as.numeric(coalesce(banker_ggr_usd/banker_turnover_usd,0)),
+          player_hold_pct = as.numeric(coalesce(player_ggr_usd/player_turnover_usd,0))) |>
+  ungroup()
+
+df_filtered <- df_agg |>
+  filter(bet_count > 5)
+```
+
+## Average Wager vs. Win Percentage
+
+```{r,include=FALSE}
+banker_scatterplot <- ggplot(df_filtered,aes(x = avg_wager, y = banker_win_pct,
+                                             text = paste("Username:",username,
+                                                          "\nCurrency",CurrencyCode,
+                                                          "\nAverage Wager USD:",scales::dollar(avg_wager,accuracy = 0.01),
+                                                          "\nWin %:",scales::percent(banker_win_pct,accuracy = 0.01)))) +
+  geom_point(color = "blue") + 
+  geom_hline(yintercept = 0.45843, color= "red") +
+  labs(x = "Average Wager USD",
+       y = "Win %",
+       title = "Average Wager USD vs. Banker Win %")+
+  scale_x_continuous(label = scales::dollar)+
+  scale_y_continuous(label = scales::percent)+
+  theme_bw() +
+  theme(panel.grid = element_blank(),
+        plot.title = element_text(face = "bold"))
+
+banker_scatterplot<- ggplotly(banker_scatterplot,tooltip = "text") |>
+  config(displayModeBar = FALSE)
+```
+
+```{r,include=FALSE}
+player_scatterplot <- ggplot(df_filtered,aes(x = avg_wager, y = player_win_pct,
+                                             text = paste("Username:",username,
+                                                          "\nCurrency",CurrencyCode,
+                                                          "\nAverage Wager USD:",scales::dollar(avg_wager,accuracy = 0.01),
+                                                          "\nWin %:",scales::percent(player_win_pct,accuracy = 0.01)))) +
+  geom_point(color = "blue") + 
+  geom_hline(yintercept = 0.44615, color= "red") +
+  labs(x = "Average Wager USD",
+       y = "Win %",
+       title = "Average Wager USD vs. Player Win %")+
+  scale_x_continuous(label = scales::dollar)+
+  scale_y_continuous(label = scales::percent)+
+  theme_bw() +
+  theme(panel.grid = element_blank(),
+        plot.title = element_text(face = "bold")) 
+
+  
+player_scatterplot<- ggplotly(player_scatterplot,tooltip = "text") |>
+  config(displayModeBar = FALSE)
+```
+
+```{r, out.width= "100%", out.height="50%"}
+manipulateWidget::combineWidgets(player_scatterplot, banker_scatterplot, nrow = 1)
+```
+
+```{r}
+cor1 <- paste("Average Wager USD vs. Banker Win % Correlation:",cor(df_filtered$avg_wager,df_filtered$banker_win_pct))
+cor2 <- paste("Average Wager USD vs. Player Win % Correlation:",cor(df_filtered$avg_wager,df_filtered$player_win_pct))
+```
+
+`r cor1`\
+`r cor2`
+
+## Average Wager vs. Hold Percentage
+
+
+```{r,include=FALSE}
+banker_scatterplot2 <- ggplot(df_filtered,aes(x = avg_wager, y = banker_hold_pct,
+                                             text = paste("Username:",username,
+                                                          "\nCurrency",CurrencyCode,
+                                                          "\nAverage Wager USD:",scales::dollar(avg_wager,accuracy = 0.01),
+                                                          "\nhold %:",scales::percent(banker_hold_pct,accuracy = 0.01)))) +
+  geom_point(color = "blue") + 
+  geom_hline(yintercept = 0.0106, color= "red") +
+  labs(x = "Average Wager USD",
+       y = "hold %",
+       title = "Average Wager USD vs. Banker Hold %")+
+  scale_x_continuous(label = scales::dollar)+
+  scale_y_continuous(label = scales::percent)+
+  theme_bw() +
+  theme(panel.grid = element_blank(),
+        plot.title = element_text(face = "bold"))
+
+banker_scatterplot2 <- ggplotly(banker_scatterplot2,tooltip = "text") |>
+  config(displayModeBar = FALSE)
+```
+
+```{r,include=FALSE}
+player_scatterplot2 <- ggplot(df_filtered,aes(x = avg_wager, y = player_hold_pct,
+                                             text = paste("Username:",username,
+                                                          "\nCurrency",CurrencyCode,
+                                                          "\nAverage Wager USD:",scales::dollar(avg_wager,accuracy = 0.01),
+                                                          "\nhold %:",scales::percent(player_hold_pct,accuracy = 0.01)))) +
+  geom_point(color = "blue") + 
+  geom_hline(yintercept = 0.0124, color= "red") +
+  labs(x = "Average Wager USD",
+       y = "hold %",
+       title = "Average Wager USD vs. Player Hold %")+
+  scale_x_continuous(label = scales::dollar)+
+  scale_y_continuous(label = scales::percent)+
+  theme_bw() +
+  theme(panel.grid = element_blank(),
+        plot.title = element_text(face = "bold")) 
+
+  
+player_scatterplot2 <- ggplotly(player_scatterplot2,tooltip = "text") |>
+  config(displayModeBar = FALSE)
+```
+
+```{r, out.width= "100%", out.height= "50%"}
+manipulateWidget::combineWidgets(player_scatterplot2, banker_scatterplot2, nrow = 1)
+```
+```{r}
+cor3 <- paste("Average Wager USD vs. Banker Hold % Correlation:",cor(df_filtered$avg_wager,df_filtered$banker_hold_pct))
+cor4 <- paste("Average Wager USD vs. Player Hold % Correlation:",cor(df_filtered$avg_wager,df_filtered$player_hold_pct))
+```
+
+
+`r cor3`\
+`r cor4`
+
+## Distribution of Max Wager
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+dist_df<- df_agg |>
+  select(playerid,CurrencyCode,max_wager_usd) |>
+  mutate(max_wager_usd =round(max_wager_usd,
+                                      digits = ifelse(max_wager_usd >= 0 & max_wager_usd < 100,-1, ifelse(max_wager_usd >= 100 & max_wager_usd < 1000,-2, ifelse(max_wager_usd >= 1000 & max_wager_usd < 5000,-3,ifelse(max_wager_usd >= 5000 & max_wager_usd < max(max_wager_usd),-4,0))))))
+
+dist_UAP <- dist_df |>
+  group_by(max_wager_usd,CurrencyCode) |>
+  reframe(UAP = length(unique(playerid))) |>
+  ungroup() |>
+  arrange(max_wager_usd) |>
+  pivot_wider(names_from = CurrencyCode,
+              values_from = UAP,
+              values_fill = 0,
+              values_fn = sum) |>
+  mutate(max_wager_usd = scales::comma(max_wager_usd))
+
+
+
+dist_UAP <- dist_UAP |>
+  as.data.frame()|>
+  mutate(Total = as.integer(rowSums(across(where(is.integer)))),
+         "CNY %" = CNY/sum(CNY),
+         "VND %" = VND/sum(VND),
+         "IDR %" = IDR/sum(IDR),
+         "THB %" = THB/sum(THB),
+         "MYR %" = MYR/sum(MYR),
+         "USD %" = USD/sum(USD),
+         "INR %" = INR/sum(INR),
+         "KRW %" = KRW/sum(KRW)
+  ) |>
+  relocate(`CNY %`, .after = CNY) |>
+  relocate(`VND %`, .after = VND) |>
+  relocate(`IDR %`, .after = IDR) |>
+  relocate(`THB %`, .after = THB) |>
+  relocate(`MYR %`, .after = MYR) |>
+  relocate(`USD %`, .after = USD) |>
+  relocate(`INR %`, .after = INR) |>
+  relocate(`KRW %`, .after = KRW)
+  
+col.tot<- c("Total",lapply(dist_UAP[,2:ncol(dist_UAP)],sum)) |>data.frame() |>
+    rename(max_wager_usd= X.Total.,
+           "CNY %" = CNY..,
+           "VND %" = VND..,
+           "IDR %" = IDR..,
+           "THB %" = THB..,
+           "MYR %" = MYR..,
+           "USD %" = USD..,
+           "INR %" = INR..,
+           "KRW %" = KRW..
+           )
+
+
+dist_UAP <- rbind(dist_UAP,col.tot)
+
+pct <- function(x) scales::percent(x,accuracy=0.01)
+
+dist_UAP <- dist_UAP |>
+  mutate_if(is.integer,scales::comma) |>
+  mutate_if(is.numeric,pct) |>
+  rename("Max Wager USD" = max_wager_usd)
+
+kableExtra::kable(dist_UAP) |>
+  kableExtra::kable_styling(bootstrap_options = c("striped", "hover","condensed"), 
+                            font_size = 12, full_width = T)
+```

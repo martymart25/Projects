@@ -1,0 +1,7 @@
+"0","mytable <- dbConnect(odbc(),""mytable"","
+"0","                       uid = key_get(""db_user""),"
+"0","                       pwd = key_get(""db_pass""))"
+"0",""
+"0","dbWriteTable(mytable,SQL(""ref_db.ray.ld_segmentation""),ld_full,overwrite = T)"
+"0",""
+"0",""

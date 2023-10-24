@@ -1,0 +1,11 @@
+name: New-AB-Test
+title: New-AB-Test
+username:
+account: bi-team
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 9437721
+bundleId: 7769449
+url: https://bi-team.shinyapps.io/New-AB-Test/
+when: 1696554025.17615
+lastSyncTime: 1696554025.17616

@@ -1,0 +1,17 @@
+"0","ld_per_month_gamet <- ld_cleaned |>"
+"0","  group_by(Playerid,`Game Type`,`Activity Month`) |>"
+"0","  reframe("
+"0","         Month_Bet_Count = sum(`Bet Count`),"
+"0","         Month_AVG_Turnover_USD = sum(`Turnover Usd`)/Month_Bet_Count,"
+"0","         Month_AVG_GGR_USD = sum(`Ggr Usd`)/Month_Bet_Count) |>"
+"0","  ungroup() "
+"0",""
+"0","ld_per_month_gamet <- ld_per_month_gamet |>"
+"0","  group_by(`Game Type`,`Activity Month`) |>"
+"0","  mutate("
+"0","       Month_Bet_Count_scale = r.zscore(Month_Bet_Count),"
+"0","       Month_AVG_Turnover_USD_scale = r.zscore(Month_AVG_Turnover_USD),"
+"0","       Month_AVG_GGR_USD_scale = r.zscore(Month_AVG_GGR_USD))"
+"2","Error in group_by(ld_per_month_gamet, `Game Type`, `Activity Month`) : 
+  object 'ld_per_month_gamet' not found
+"

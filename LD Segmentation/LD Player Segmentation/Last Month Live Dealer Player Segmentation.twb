@@ -1,0 +1,2913 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20213.21.1018.0949                               -->
+<workbook source-build='2021.3.3 (20213.21.1018.0949)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='Custom SQL Query (ref_db)' inline='true' name='federated.0uechxz17ny2qt1a8jqh20n8zj8j' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='172.24.84.7' name='sqlserver.1jr6q3x15iq9rx12d5ea21h0404b'>
+            <connection authentication='sqlserver' class='sqlserver' dbname='ref_db' minimum-driver-version='SQL Server Native Client 10.0' odbc-native-protocol='yes' one-time-sql='' server='172.24.84.7' username='bi.ray' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='sqlserver.1jr6q3x15iq9rx12d5ea21h0404b' name='Live Dealer Segmentation' type='text'>SELECT *&#13;
+,&apos;Last Month&apos; Period&#13;
+FROM ref_db.ray.LDPlayerSegmentationMonthly (nolock)&#13;
+UNION ALL&#13;
+SELECT *&#13;
+,&apos;Lifetime&apos; Period&#13;
+FROM ref_db.ray.LDPlayerSegmentationMonthly (nolock)</_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='sqlserver.1jr6q3x15iq9rx12d5ea21h0404b' name='Live Dealer Segmentation' type='text'>SELECT *&#13;
+,&apos;Last Month&apos; Period&#13;
+FROM ref_db.ray.LDPlayerSegmentationMonthly (nolock)&#13;
+UNION ALL&#13;
+SELECT *&#13;
+,&apos;Lifetime&apos; Period&#13;
+FROM ref_db.ray.LDPlayerSegmentationMonthly (nolock)</_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>PlayerId</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[PlayerId]</local-name>
+            <parent-name>[Live Dealer Segmentation]</parent-name>
+            <remote-alias>PlayerId</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_BIGINT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SBIGINT&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_64F3F5252BE540318EF2DDF05E7C7CF6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Username</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Username]</local-name>
+            <parent-name>[Live Dealer Segmentation]</parent-name>
+            <remote-alias>Username</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>55</width>
+            <contains-null>false</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_64F3F5252BE540318EF2DDF05E7C7CF6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Currency</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Currency]</local-name>
+            <parent-name>[Live Dealer Segmentation]</parent-name>
+            <remote-alias>Currency</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>5</width>
+            <contains-null>false</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_64F3F5252BE540318EF2DDF05E7C7CF6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>main_product</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[main_product]</local-name>
+            <parent-name>[Live Dealer Segmentation]</parent-name>
+            <remote-alias>main_product</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>55</width>
+            <contains-null>false</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_64F3F5252BE540318EF2DDF05E7C7CF6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LD_main_vendor</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[LD_main_vendor]</local-name>
+            <parent-name>[Live Dealer Segmentation]</parent-name>
+            <remote-alias>LD_main_vendor</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>false</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_64F3F5252BE540318EF2DDF05E7C7CF6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LD_Last_Active_Date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[LD_Last_Active_Date]</local-name>
+            <parent-name>[Live Dealer Segmentation]</parent-name>
+            <remote-alias>LD_Last_Active_Date</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_DATE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_DATE&quot;</attribute>
+              <attribute datatype='boolean' name='TypeIsDateTime2orDate'>true</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_64F3F5252BE540318EF2DDF05E7C7CF6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LT_Recency</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[LT_Recency]</local-name>
+            <parent-name>[Live Dealer Segmentation]</parent-name>
+            <remote-alias>LT_Recency</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_64F3F5252BE540318EF2DDF05E7C7CF6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LT_Bet_Count</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[LT_Bet_Count]</local-name>
+            <parent-name>[Live Dealer Segmentation]</parent-name>
+            <remote-alias>LT_Bet_Count</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_64F3F5252BE540318EF2DDF05E7C7CF6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LT_Handle_USD</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[LT_Handle_USD]</local-name>
+            <parent-name>[Live Dealer Segmentation]</parent-name>
+            <remote-alias>LT_Handle_USD</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_64F3F5252BE540318EF2DDF05E7C7CF6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LT_CGR_USD</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[LT_CGR_USD]</local-name>
+            <parent-name>[Live Dealer Segmentation]</parent-name>
+            <remote-alias>LT_CGR_USD</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_64F3F5252BE540318EF2DDF05E7C7CF6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LT_RFM_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[LT_RFM_score]</local-name>
+            <parent-name>[Live Dealer Segmentation]</parent-name>
+            <remote-alias>LT_RFM_score</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_64F3F5252BE540318EF2DDF05E7C7CF6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LT_segment</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[LT_segment]</local-name>
+            <parent-name>[Live Dealer Segmentation]</parent-name>
+            <remote-alias>LT_segment</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_64F3F5252BE540318EF2DDF05E7C7CF6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LT_RFM_score_curr</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[LT_RFM_score_curr]</local-name>
+            <parent-name>[Live Dealer Segmentation]</parent-name>
+            <remote-alias>LT_RFM_score_curr</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_64F3F5252BE540318EF2DDF05E7C7CF6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LT_segment_curr</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[LT_segment_curr]</local-name>
+            <parent-name>[Live Dealer Segmentation]</parent-name>
+            <remote-alias>LT_segment_curr</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_64F3F5252BE540318EF2DDF05E7C7CF6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Month_Recency</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Month_Recency]</local-name>
+            <parent-name>[Live Dealer Segmentation]</parent-name>
+            <remote-alias>Month_Recency</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_64F3F5252BE540318EF2DDF05E7C7CF6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Month_Bet_Count</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[Month_Bet_Count]</local-name>
+            <parent-name>[Live Dealer Segmentation]</parent-name>
+            <remote-alias>Month_Bet_Count</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_64F3F5252BE540318EF2DDF05E7C7CF6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Month_Handle_USD</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Month_Handle_USD]</local-name>
+            <parent-name>[Live Dealer Segmentation]</parent-name>
+            <remote-alias>Month_Handle_USD</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_64F3F5252BE540318EF2DDF05E7C7CF6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Month_CGR_USD</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Month_CGR_USD]</local-name>
+            <parent-name>[Live Dealer Segmentation]</parent-name>
+            <remote-alias>Month_CGR_USD</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_64F3F5252BE540318EF2DDF05E7C7CF6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Month_RFM_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Month_RFM_score]</local-name>
+            <parent-name>[Live Dealer Segmentation]</parent-name>
+            <remote-alias>Month_RFM_score</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_64F3F5252BE540318EF2DDF05E7C7CF6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Month_segment</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Month_segment]</local-name>
+            <parent-name>[Live Dealer Segmentation]</parent-name>
+            <remote-alias>Month_segment</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_64F3F5252BE540318EF2DDF05E7C7CF6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Month_RFM_score_curr</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Month_RFM_score_curr]</local-name>
+            <parent-name>[Live Dealer Segmentation]</parent-name>
+            <remote-alias>Month_RFM_score_curr</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_FLOAT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_64F3F5252BE540318EF2DDF05E7C7CF6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Month_segment_curr</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Month_segment_curr]</local-name>
+            <parent-name>[Live Dealer Segmentation]</parent-name>
+            <remote-alias>Month_segment_curr</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_64F3F5252BE540318EF2DDF05E7C7CF6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LastActivityMonth</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[LastActivityMonth]</local-name>
+            <parent-name>[Live Dealer Segmentation]</parent-name>
+            <remote-alias>LastActivityMonth</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_DATE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_DATE&quot;</attribute>
+              <attribute datatype='boolean' name='TypeIsDateTime2orDate'>true</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_64F3F5252BE540318EF2DDF05E7C7CF6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Period</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Period]</local-name>
+            <parent-name>[Live Dealer Segmentation]</parent-name>
+            <remote-alias>Period</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>10</width>
+            <contains-null>false</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_64F3F5252BE540318EF2DDF05E7C7CF6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='UAP' datatype='integer' name='[Calculation_1957939973534629888]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNTD([PlayerId])' />
+      </column>
+      <column caption='Last Month Average Recency' datatype='real' name='[Calculation_1957939973856686082]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='AVG([Month_Recency])' />
+      </column>
+      <column caption='Last Month Average Frequency' datatype='real' name='[Calculation_1957939973857140739]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='AVG([Month_Bet_Count])' />
+      </column>
+      <column caption='Last Month Average CGR $' datatype='real' name='[Calculation_1957939973857271812]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='AVG([Month_CGR_USD])' />
+      </column>
+      <column caption='Last Month Average Handle $' datatype='real' name='[Calculation_1957939973858217989]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='AVG([Month_Handle_USD])' />
+      </column>
+      <column caption='T' datatype='real' name='[Calculation_1957939979821056029]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='(INDEX()-25)/4'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column aggregation='Sum' caption='ToPad' datatype='integer' name='[Calculation_1957939979821375518]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='IF [Period] = &apos;Last Month&apos; THEN 1 ELSE 49 END' />
+      </column>
+      <column caption='sigmoid' datatype='real' name='[Calculation_1957939979822153759]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='1/(1+EXP(1)^[Calculation_1957939979821056029])'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Rank 1' datatype='real' name='[Calculation_1957939979826278432]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='RUNNING_SUM(SUM([Calculation_1957939979827028001]))/TOTAL(SUM([Calculation_1957939979827028001]))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Count' datatype='integer' name='[Calculation_1957939979827028001]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='{ FIXED [PlayerId]:&#13;&#10;COUNTD([PlayerId])&#13;&#10;}' />
+      </column>
+      <column caption='Curve' datatype='real' name='[Calculation_1957939979827511331]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Calculation_1957939979826278432] + (([Rank 1 (copy)_1957939979827453986]-[Calculation_1957939979826278432])*[Calculation_1957939979822153759])'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Size' datatype='integer' name='[Calculation_792352101273554947]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='WINDOW_SUM(SUM([Calculation_1957939979827028001]))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='LD Last Activity Date' datatype='date' name='[LD_Last_Active_Date]' role='dimension' type='ordinal' />
+      <column caption='LD Main Vendor' datatype='string' name='[LD_main_vendor]' role='dimension' type='nominal' />
+      <column caption='Lifetime Bet Count' datatype='integer' name='[LT_Bet_Count]' role='measure' type='quantitative' />
+      <column caption='Lifetime CGR USD' datatype='real' name='[LT_CGR_USD]' role='measure' type='quantitative' />
+      <column caption='Lifetime Handle USD' datatype='real' name='[LT_Handle_USD]' role='measure' type='quantitative' />
+      <column caption='Lifetime RFM Score' datatype='real' name='[LT_RFM_score]' role='measure' type='quantitative' />
+      <column caption='Lifetime RFM Score per Currency' datatype='real' name='[LT_RFM_score_curr]' role='measure' type='quantitative' />
+      <column caption='Lifetime Recency' datatype='real' name='[LT_Recency]' role='measure' type='quantitative' />
+      <column caption='Lifetime Segment' datatype='string' name='[LT_segment]' role='dimension' type='nominal' />
+      <column caption='Lifetime Segment per Currency' datatype='string' name='[LT_segment_curr]' role='dimension' type='nominal' />
+      <column datatype='string' name='[Last Month Segment (group)]' role='dimension' type='nominal'>
+        <calculation class='categorical-bin' column='[Month_segment]' default='&quot;Other&quot;' new-bin='true'>
+          <bin default-name='true' value='&quot;Grinders&quot;'>
+            <value>&quot;Grinders&quot;</value>
+          </bin>
+        </calculation>
+      </column>
+      <column caption='Last Month Bet Count' datatype='integer' name='[Month_Bet_Count]' role='measure' type='quantitative' />
+      <column caption='Last Month CGR USD' datatype='real' name='[Month_CGR_USD]' role='measure' type='quantitative' />
+      <column caption='Last Month Handle USD ' datatype='real' name='[Month_Handle_USD]' role='measure' type='quantitative' />
+      <column caption='Last Month RFM Score' datatype='real' name='[Month_RFM_score]' role='measure' type='quantitative' />
+      <column caption='Last Month RFM Score per Currency' datatype='real' name='[Month_RFM_score_curr]' role='measure' type='quantitative' />
+      <column caption='Last Month Recency' datatype='real' name='[Month_Recency]' role='measure' type='quantitative' />
+      <column caption='Last Month Segment' datatype='string' name='[Month_segment]' role='dimension' type='nominal' />
+      <column caption='Last Month Segment per Currency' datatype='string' name='[Month_segment_curr]' role='dimension' type='nominal' />
+      <column aggregation='Sum' caption='Player Id' datatype='integer' name='[PlayerId]' role='dimension' type='ordinal' />
+      <column caption='Rank 2' datatype='real' name='[Rank 1 (copy)_1957939979827453986]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='RUNNING_SUM(SUM([Calculation_1957939979827028001]))/TOTAL(SUM([Calculation_1957939979827028001]))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column aggregation='None' caption='Padded' datatype='integer' name='[ToPad (bin)]' role='dimension' type='ordinal'>
+        <calculation class='bin' decimals='0' formula='[Calculation_1957939979821375518]' peg='0' size='1' />
+      </column>
+      <_.fcp.ObjectModelTableType.true...column caption='Custom SQL Query' datatype='table' name='[__tableau_internal_object_id__].[_64F3F5252BE540318EF2DDF05E7C7CF6]' role='measure' type='quantitative' />
+      <column caption='Main Product' datatype='string' name='[main_product]' role='dimension' type='nominal' />
+      <column-instance column='[LD_main_vendor]' derivation='None' name='[none:LD_main_vendor:nk]' pivot='key' type='nominal' />
+      <column-instance column='[LT_segment]' derivation='None' name='[none:LT_segment:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Month_segment]' derivation='None' name='[none:Month_segment:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Month_segment_curr]' derivation='None' name='[none:Month_segment_curr:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Calculation_1957939973856686082]' derivation='User' name='[usr:Calculation_1957939973856686082:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_1957939973857140739]' derivation='User' name='[usr:Calculation_1957939973857140739:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_1957939973857271812]' derivation='User' name='[usr:Calculation_1957939973857271812:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_1957939973858217989]' derivation='User' name='[usr:Calculation_1957939973858217989:qk]' pivot='key' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973856686082:qk]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973857271812:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973858217989:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973857140739:qk]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:LD_main_vendor:nk]&#10;[none:Month_segment:nk]' type='palette'>
+            <map to='#499894'>
+              <multibucket>
+                <bucket>&quot;Asia Gaming-multi&quot;</bucket>
+                <bucket>&quot;Grinder Outlier&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#499894'>
+              <multibucket>
+                <bucket>&quot;Mansion&quot;</bucket>
+                <bucket>&quot;Grinder Outlier&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#499894'>
+              <multibucket>
+                <bucket>&quot;Oriental Gaming&quot;</bucket>
+                <bucket>&quot;Profitable&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#499894'>
+              <multibucket>
+                <bucket>&quot;WM Casino&quot;</bucket>
+                <bucket>&quot;Profitable&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#4e79a7'>
+              <multibucket>
+                <bucket>&quot;AC Milan&quot;</bucket>
+                <bucket>&quot;Grinders&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#4e79a7'>
+              <multibucket>
+                <bucket>&quot;Ezugi-multi&quot;</bucket>
+                <bucket>&quot;Grinders&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#4e79a7'>
+              <multibucket>
+                <bucket>&quot;Microgaming-multi&quot;</bucket>
+                <bucket>&quot;Profitable&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#4e79a7'>
+              <multibucket>
+                <bucket>&quot;Sexy Gaming&quot;</bucket>
+                <bucket>&quot;Grinders&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#59a14f'>
+              <multibucket>
+                <bucket>&quot;Asia Gaming&quot;</bucket>
+                <bucket>&quot;Grinder Outlier&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#59a14f'>
+              <multibucket>
+                <bucket>&quot;LaLigaRoom&quot;</bucket>
+                <bucket>&quot;Profitable&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#59a14f'>
+              <multibucket>
+                <bucket>&quot;OB-multi&quot;</bucket>
+                <bucket>&quot;Grinder Outlier&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#59a14f'>
+              <multibucket>
+                <bucket>&quot;Sexy Gaming-multi&quot;</bucket>
+                <bucket>&quot;Profitable&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#79706e'>
+              <multibucket>
+                <bucket>&quot;Evolution&quot;</bucket>
+                <bucket>&quot;Grinders&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#79706e'>
+              <multibucket>
+                <bucket>&quot;Mansion-multi&quot;</bucket>
+                <bucket>&quot;Grinder Outlier&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#79706e'>
+              <multibucket>
+                <bucket>&quot;Pragmatic&quot;</bucket>
+                <bucket>&quot;Grinders&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#79706e'>
+              <multibucket>
+                <bucket>&quot;WM Casino-multi&quot;</bucket>
+                <bucket>&quot;Profitable Outlier&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#86bcb6'>
+              <multibucket>
+                <bucket>&quot;Asia Gaming-multi&quot;</bucket>
+                <bucket>&quot;Grinders&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#86bcb6'>
+              <multibucket>
+                <bucket>&quot;Mansion&quot;</bucket>
+                <bucket>&quot;Grinders&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#86bcb6'>
+              <multibucket>
+                <bucket>&quot;Oriental Gaming-multi&quot;</bucket>
+                <bucket>&quot;Grinders&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#86bcb6'>
+              <multibucket>
+                <bucket>&quot;WM Casino-multi&quot;</bucket>
+                <bucket>&quot;Grinder Outlier&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#8cd17d'>
+              <multibucket>
+                <bucket>&quot;Asia Gaming&quot;</bucket>
+                <bucket>&quot;Grinders&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#8cd17d'>
+              <multibucket>
+                <bucket>&quot;LaLigaRoom-multi&quot;</bucket>
+                <bucket>&quot;Grinders&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#8cd17d'>
+              <multibucket>
+                <bucket>&quot;OB-multi&quot;</bucket>
+                <bucket>&quot;Grinders&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#8cd17d'>
+              <multibucket>
+                <bucket>&quot;Sexy Gaming-multi&quot;</bucket>
+                <bucket>&quot;Profitable Outlier&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#9d7660'>
+              <multibucket>
+                <bucket>&quot;Ezugi&quot;</bucket>
+                <bucket>&quot;Grinders&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#9d7660'>
+              <multibucket>
+                <bucket>&quot;Microgaming-multi&quot;</bucket>
+                <bucket>&quot;Grinder Outlier&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#9d7660'>
+              <multibucket>
+                <bucket>&quot;Pragmatic-multi&quot;</bucket>
+                <bucket>&quot;Profitable Outlier&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#a0cbe8'>
+              <multibucket>
+                <bucket>&quot;AC Milan&quot;</bucket>
+                <bucket>&quot;Profitable&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#a0cbe8'>
+              <multibucket>
+                <bucket>&quot;Ezugi-multi&quot;</bucket>
+                <bucket>&quot;Profitable&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#a0cbe8'>
+              <multibucket>
+                <bucket>&quot;Microgaming-multi&quot;</bucket>
+                <bucket>&quot;Profitable Outlier&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#a0cbe8'>
+              <multibucket>
+                <bucket>&quot;Sexy Gaming&quot;</bucket>
+                <bucket>&quot;Profitable&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#b07aa1'>
+              <multibucket>
+                <bucket>&quot;Evolution-multi&quot;</bucket>
+                <bucket>&quot;Grinders&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#b07aa1'>
+              <multibucket>
+                <bucket>&quot;Microgaming&quot;</bucket>
+                <bucket>&quot;Grinders&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#b07aa1'>
+              <multibucket>
+                <bucket>&quot;Pragmatic-multi&quot;</bucket>
+                <bucket>&quot;Grinders&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#b6992d'>
+              <multibucket>
+                <bucket>&quot;Asia Gaming&quot;</bucket>
+                <bucket>&quot;Profitable&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#b6992d'>
+              <multibucket>
+                <bucket>&quot;LaLigaRoom-multi&quot;</bucket>
+                <bucket>&quot;Profitable&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#b6992d'>
+              <multibucket>
+                <bucket>&quot;OB-multi&quot;</bucket>
+                <bucket>&quot;Profitable&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#b6992d'>
+              <multibucket>
+                <bucket>&quot;WM Casino&quot;</bucket>
+                <bucket>&quot;Grinder Outlier&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#bab0ac'>
+              <multibucket>
+                <bucket>&quot;Evolution&quot;</bucket>
+                <bucket>&quot;Profitable&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#bab0ac'>
+              <multibucket>
+                <bucket>&quot;Mansion-multi&quot;</bucket>
+                <bucket>&quot;Grinders&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#bab0ac'>
+              <multibucket>
+                <bucket>&quot;Pragmatic&quot;</bucket>
+                <bucket>&quot;Profitable&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#d37295'>
+              <multibucket>
+                <bucket>&quot;Evolution&quot;</bucket>
+                <bucket>&quot;Profitable Outlier&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#d37295'>
+              <multibucket>
+                <bucket>&quot;Mansion-multi&quot;</bucket>
+                <bucket>&quot;Profitable&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#d37295'>
+              <multibucket>
+                <bucket>&quot;Pragmatic&quot;</bucket>
+                <bucket>&quot;Profitable Outlier&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#d4a6c8'>
+              <multibucket>
+                <bucket>&quot;Evolution-multi&quot;</bucket>
+                <bucket>&quot;Profitable&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#d4a6c8'>
+              <multibucket>
+                <bucket>&quot;Microgaming&quot;</bucket>
+                <bucket>&quot;Profitable&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#d4a6c8'>
+              <multibucket>
+                <bucket>&quot;Pragmatic-multi&quot;</bucket>
+                <bucket>&quot;Profitable&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#d7b5a6'>
+              <multibucket>
+                <bucket>&quot;Ezugi&quot;</bucket>
+                <bucket>&quot;Profitable&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#d7b5a6'>
+              <multibucket>
+                <bucket>&quot;Microgaming-multi&quot;</bucket>
+                <bucket>&quot;Grinders&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#d7b5a6'>
+              <multibucket>
+                <bucket>&quot;Sexy Gaming&quot;</bucket>
+                <bucket>&quot;Grinder Outlier&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#e15759'>
+              <multibucket>
+                <bucket>&quot;Asia Gaming-multi&quot;</bucket>
+                <bucket>&quot;Profitable&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#e15759'>
+              <multibucket>
+                <bucket>&quot;Mansion&quot;</bucket>
+                <bucket>&quot;Profitable&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#e15759'>
+              <multibucket>
+                <bucket>&quot;Oriental Gaming-multi&quot;</bucket>
+                <bucket>&quot;Profitable&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#e15759'>
+              <multibucket>
+                <bucket>&quot;WM Casino-multi&quot;</bucket>
+                <bucket>&quot;Grinders&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#f1ce63'>
+              <multibucket>
+                <bucket>&quot;Asia Gaming&quot;</bucket>
+                <bucket>&quot;Profitable Outlier&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#f1ce63'>
+              <multibucket>
+                <bucket>&quot;LaLigaRoom-multi&quot;</bucket>
+                <bucket>&quot;Profitable Outlier&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#f1ce63'>
+              <multibucket>
+                <bucket>&quot;Oriental Gaming&quot;</bucket>
+                <bucket>&quot;Grinders&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#f1ce63'>
+              <multibucket>
+                <bucket>&quot;WM Casino&quot;</bucket>
+                <bucket>&quot;Grinders&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#f28e2b'>
+              <multibucket>
+                <bucket>&quot;AC Milan-multi&quot;</bucket>
+                <bucket>&quot;Grinders&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#f28e2b'>
+              <multibucket>
+                <bucket>&quot;Fortune88-multi&quot;</bucket>
+                <bucket>&quot;Grinders&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#f28e2b'>
+              <multibucket>
+                <bucket>&quot;OB&quot;</bucket>
+                <bucket>&quot;Grinders&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#f28e2b'>
+              <multibucket>
+                <bucket>&quot;Sexy Gaming-multi&quot;</bucket>
+                <bucket>&quot;Grinder Outlier&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#fabfd2'>
+              <multibucket>
+                <bucket>&quot;Evolution-multi&quot;</bucket>
+                <bucket>&quot;Grinder Outlier&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#fabfd2'>
+              <multibucket>
+                <bucket>&quot;Mansion-multi&quot;</bucket>
+                <bucket>&quot;Profitable Outlier&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#fabfd2'>
+              <multibucket>
+                <bucket>&quot;Pragmatic-multi&quot;</bucket>
+                <bucket>&quot;Grinder Outlier&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#ff9d9a'>
+              <multibucket>
+                <bucket>&quot;Asia Gaming-multi&quot;</bucket>
+                <bucket>&quot;Profitable Outlier&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#ff9d9a'>
+              <multibucket>
+                <bucket>&quot;Mansion&quot;</bucket>
+                <bucket>&quot;Profitable Outlier&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#ff9d9a'>
+              <multibucket>
+                <bucket>&quot;Pragmatic&quot;</bucket>
+                <bucket>&quot;Grinder Outlier&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#ff9d9a'>
+              <multibucket>
+                <bucket>&quot;WM Casino-multi&quot;</bucket>
+                <bucket>&quot;Profitable&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#ffbe7d'>
+              <multibucket>
+                <bucket>&quot;AC Milan-multi&quot;</bucket>
+                <bucket>&quot;Profitable&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#ffbe7d'>
+              <multibucket>
+                <bucket>&quot;LaLigaRoom&quot;</bucket>
+                <bucket>&quot;Grinders&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#ffbe7d'>
+              <multibucket>
+                <bucket>&quot;OB&quot;</bucket>
+                <bucket>&quot;Profitable&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#ffbe7d'>
+              <multibucket>
+                <bucket>&quot;Sexy Gaming-multi&quot;</bucket>
+                <bucket>&quot;Grinders&quot;</bucket>
+              </multibucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:LD_main_vendor:nk]' palette='superfishel_stone_10_0' type='palette'>
+            <map to='#55ad89'>
+              <bucket>&quot;Evolution&quot;</bucket>
+            </map>
+            <map to='#55ad89'>
+              <bucket>&quot;Microgaming-multi&quot;</bucket>
+            </map>
+            <map to='#55ad89'>
+              <bucket>&quot;WM Casino-multi&quot;</bucket>
+            </map>
+            <map to='#6388b4'>
+              <bucket>&quot;AC Milan&quot;</bucket>
+            </map>
+            <map to='#6388b4'>
+              <bucket>&quot;LaLigaRoom-multi&quot;</bucket>
+            </map>
+            <map to='#6388b4'>
+              <bucket>&quot;Pragmatic-multi&quot;</bucket>
+            </map>
+            <map to='#767676'>
+              <bucket>&quot;LaLigaRoom&quot;</bucket>
+            </map>
+            <map to='#767676'>
+              <bucket>&quot;Pragmatic&quot;</bucket>
+            </map>
+            <map to='#8cc2ca'>
+              <bucket>&quot;Asia Gaming-multi&quot;</bucket>
+            </map>
+            <map to='#8cc2ca'>
+              <bucket>&quot;Microgaming&quot;</bucket>
+            </map>
+            <map to='#8cc2ca'>
+              <bucket>&quot;WM Casino&quot;</bucket>
+            </map>
+            <map to='#a9b5ae'>
+              <bucket>&quot;Fortune88-multi&quot;</bucket>
+            </map>
+            <map to='#a9b5ae'>
+              <bucket>&quot;Oriental Gaming-multi&quot;</bucket>
+            </map>
+            <map to='#baa094'>
+              <bucket>&quot;Ezugi-multi&quot;</bucket>
+            </map>
+            <map to='#baa094'>
+              <bucket>&quot;Oriental Gaming&quot;</bucket>
+            </map>
+            <map to='#bb7693'>
+              <bucket>&quot;Ezugi&quot;</bucket>
+            </map>
+            <map to='#bb7693'>
+              <bucket>&quot;OB-multi&quot;</bucket>
+            </map>
+            <map to='#c3bc3f'>
+              <bucket>&quot;Evolution-multi&quot;</bucket>
+            </map>
+            <map to='#c3bc3f'>
+              <bucket>&quot;OB&quot;</bucket>
+            </map>
+            <map to='#ef6f6a'>
+              <bucket>&quot;Asia Gaming&quot;</bucket>
+            </map>
+            <map to='#ef6f6a'>
+              <bucket>&quot;Mansion-multi&quot;</bucket>
+            </map>
+            <map to='#ef6f6a'>
+              <bucket>&quot;Sexy Gaming-multi&quot;</bucket>
+            </map>
+            <map to='#ffae34'>
+              <bucket>&quot;AC Milan-multi&quot;</bucket>
+            </map>
+            <map to='#ffae34'>
+              <bucket>&quot;Mansion&quot;</bucket>
+            </map>
+            <map to='#ffae34'>
+              <bucket>&quot;Sexy Gaming&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Month_segment_curr:nk]' type='palette'>
+            <map to='#59a14f'>
+              <bucket>&quot;Profitable Outlier&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;Profitable&quot;</bucket>
+            </map>
+            <map to='#ef6f6a'>
+              <bucket>&quot;Grinder Outlier&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;Grinders&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Month_segment:nk]' palette='superfishel_stone_10_0' type='palette'>
+            <map to='#55ad89'>
+              <bucket>&quot;Profitable Outlier&quot;</bucket>
+            </map>
+            <map to='#8cc2ca'>
+              <bucket>&quot;Profitable&quot;</bucket>
+            </map>
+            <map to='#bb7693'>
+              <bucket>&quot;Grinders&quot;</bucket>
+            </map>
+            <map to='#ef6f6a'>
+              <bucket>&quot;Grinder Outlier&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:LT_segment:nk]' palette='superfishel_stone_10_0' type='palette'>
+            <map to='#55ad89'>
+              <bucket>&quot;Profitable Outlier&quot;</bucket>
+            </map>
+            <map to='#8cc2ca'>
+              <bucket>&quot;Profitable&quot;</bucket>
+            </map>
+            <map to='#bb7693'>
+              <bucket>&quot;Grinders&quot;</bucket>
+            </map>
+            <map to='#ef6f6a'>
+              <bucket>&quot;Grinder Outlier&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Philippines&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='Custom SQL Query' id='_64F3F5252BE540318EF2DDF05E7C7CF6'>
+            <properties context=''>
+              <relation connection='sqlserver.1jr6q3x15iq9rx12d5ea21h0404b' name='Live Dealer Segmentation' type='text'>SELECT *&#13;
+,&apos;Last Month&apos; Period&#13;
+FROM ref_db.ray.LDPlayerSegmentationMonthly (nolock)&#13;
+UNION ALL&#13;
+SELECT *&#13;
+,&apos;Lifetime&apos; Period&#13;
+FROM ref_db.ray.LDPlayerSegmentationMonthly (nolock)</relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <actions>
+    <action caption='Highlight 1 (generated)' name='[Action2_900C68F9A2A8471AA0D3B0AF532E38F1]'>
+      <activation auto-clear='true' type='on-select' />
+      <source type='sheet' worksheet='Lifetime Segment' />
+      <command command='tsc:brush'>
+        <param name='field-captions' value='Lifetime Segment' />
+        <param name='target' value='Lifetime Segment' />
+      </command>
+    </action>
+    <action caption='Sankey Lifetime' name='[Action3_F51E5A0DB6814C7C880460455EED9678]'>
+      <activation auto-clear='true' type='on-hover' />
+      <source dashboard='Live Dealer Profitability Segment-Last Month' type='sheet' worksheet='Lifetime Segment' />
+      <command command='tsc:brush'>
+        <param name='exclude' value='UAP vs. Last Month Segments by Main Vendor,Averages per Last month segment,Last Month Segment,UAP per Count and Last month segment' />
+        <param name='special-fields' value='all' />
+        <param name='target' value='Live Dealer Profitability Segment-Last Month' />
+      </command>
+    </action>
+    <action caption='Highlight 2 (generated)' name='[Action4_534CC473C5B94B5CA9F6DA743D7E526A]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Live Dealer Profitability Segment-Last Month' type='sheet' />
+      <command command='tsc:brush'>
+        <param name='field-captions' value='Last Month Segment' />
+        <param name='target' value='Live Dealer Profitability Segment-Last Month' />
+      </command>
+    </action>
+    <action caption='Sankey' name='[Action5_21B6EC2E9A844A89AECED1A781F7738E]'>
+      <activation auto-clear='true' type='on-hover' />
+      <source dashboard='Live Dealer Profitability Segment-Last Month' type='sheet' worksheet='Sankey Last Month Segments to Lifetime Segments' />
+      <command command='tsc:brush'>
+        <param name='exclude' value='UAP vs. Last Month Segments by Main Vendor,Averages per Last month segment,UAP per Count and Last month segment' />
+        <param name='special-fields' value='all' />
+        <param name='target' value='Live Dealer Profitability Segment-Last Month' />
+      </command>
+    </action>
+    <action caption='Sankey Last Month' name='[Action6_75907B4E87664613A058837BE076C47D]'>
+      <activation auto-clear='true' type='on-hover' />
+      <source dashboard='Live Dealer Profitability Segment-Last Month' type='sheet' worksheet='Last Month Segment' />
+      <command command='tsc:brush'>
+        <param name='exclude' value='UAP vs. Last Month Segments by Main Vendor,Averages per Last month segment,Lifetime Segment,UAP per Count and Last month segment' />
+        <param name='special-fields' value='all' />
+        <param name='target' value='Live Dealer Profitability Segment-Last Month' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Averages per Last month segment'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#000000' fontsize='12'>AVERAGE RFM BY LAST MONTH SEGMENTS</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Custom SQL Query (ref_db)' name='federated.0uechxz17ny2qt1a8jqh20n8zj8j' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0uechxz17ny2qt1a8jqh20n8zj8j'>
+            <column caption='UAP' datatype='integer' name='[Calculation_1957939973534629888]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD([PlayerId])' />
+            </column>
+            <column caption='Last Month Average Recency' datatype='real' name='[Calculation_1957939973856686082]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='AVG([Month_Recency])' />
+            </column>
+            <column caption='Last Month Average Frequency' datatype='real' name='[Calculation_1957939973857140739]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='AVG([Month_Bet_Count])' />
+            </column>
+            <column caption='Last Month Average CGR $' datatype='real' name='[Calculation_1957939973857271812]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='AVG([Month_CGR_USD])' />
+            </column>
+            <column caption='Last Month Average Handle $' datatype='real' name='[Calculation_1957939973858217989]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='AVG([Month_Handle_USD])' />
+            </column>
+            <column caption='Last Month Bet Count' datatype='integer' name='[Month_Bet_Count]' role='measure' type='quantitative' />
+            <column caption='Last Month CGR USD' datatype='real' name='[Month_CGR_USD]' role='measure' type='quantitative' />
+            <column caption='Last Month Handle USD ' datatype='real' name='[Month_Handle_USD]' role='measure' type='quantitative' />
+            <column caption='Last Month Recency' datatype='real' name='[Month_Recency]' role='measure' type='quantitative' />
+            <column caption='Last Month Segment' datatype='string' name='[Month_segment]' role='dimension' type='nominal' />
+            <column aggregation='Sum' caption='Player Id' datatype='integer' name='[PlayerId]' role='dimension' type='ordinal' />
+            <column-instance column='[Month_segment]' derivation='None' name='[none:Month_segment:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1957939973534629888]' derivation='User' name='[usr:Calculation_1957939973534629888:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1957939973856686082]' derivation='User' name='[usr:Calculation_1957939973856686082:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1957939973857140739]' derivation='User' name='[usr:Calculation_1957939973857140739:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1957939973857271812]' derivation='User' name='[usr:Calculation_1957939973857271812:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1957939973858217989]' derivation='User' name='[usr:Calculation_1957939973858217989:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973534629888:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973856686082:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973857140739:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973858217989:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973857271812:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973534629888:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973856686082:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973857140739:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973858217989:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973857271812:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <alphabetic-sort column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment:nk]' direction='DESC' />
+          <slices>
+            <column>[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='height' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973856686082:qk]' value='27' />
+            <format attr='height' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973857140739:qk]' value='27' />
+            <format attr='height' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973858217989:qk]' value='27' />
+            <format attr='height' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973857271812:qk]' value='27' />
+            <format attr='display' class='0' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[Multiple Values]' scope='cols' value='false' />
+            <format attr='tick-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='height' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment:nk]' value='25' />
+            <format attr='text-format' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973858217989:qk]' value='c&quot;$&quot;#,##0;-&quot;$&quot;#,##0' />
+            <format attr='text-format' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973857271812:qk]' value='c&quot;$&quot;#,##0;-&quot;$&quot;#,##0' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment:nk]' value='124' />
+            <format attr='height-header' value='10' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-align' scope='cols' value='center' />
+            <format attr='vertical-align' scope='cols' value='center' />
+            <format attr='text-align' scope='rows' value='center' />
+            <format attr='vertical-align' scope='rows' value='center' />
+            <format attr='font-weight' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[:Measure Names]' value='bold' />
+            <format attr='color' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[:Measure Names]' value='#000000' />
+            <format attr='font-size' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[:Measure Names]' value='9' />
+            <format attr='text-align' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment:nk]' value='center' />
+            <format attr='vertical-align' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment:nk]' value='center' />
+            <format attr='font-size' value='9' />
+            <format attr='font-family' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[:Measure Names]' value='Calibri' />
+            <format attr='font-family' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment:nk]' value='Calibri' />
+            <format attr='font-size' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment:nk]' value='9' />
+            <format attr='color' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment:nk]' value='#000000' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[Multiple Values]' num-steps='2' palette='red_blue_diverging_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+            <format attr='font-family' value='Calibri' />
+            <format attr='font-size' value='8' />
+          </style-rule>
+          <style-rule element='dropline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+            <format attr='line-visibility' scope='rows' value='on' />
+            <format attr='line-pattern-only' scope='rows' value='dashed' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+            <format attr='line-pattern-only' scope='cols' value='solid' />
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='stroke-size' scope='cols' value='1' />
+            <format attr='line-visibility' scope='cols' value='on' />
+            <format attr='line-pattern-only' scope='cols' value='solid' />
+            <format attr='div-level' scope='cols' value='2' />
+          </style-rule>
+          <style-rule element='header-div'>
+            <format attr='line-pattern-only' scope='cols' value='solid' />
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='background-color' value='#ffffff' />
+            <format attr='font-family' value='Calibri' />
+          </style-rule>
+          <style-rule element='tooltip'>
+            <format attr='font-family' value='Calibri' />
+            <format attr='font-size' value='10' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='6' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[Multiple Values]' />
+              <text column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[Multiple Values]' />
+              <lod column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[Multiple Values]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='230' />
+                <format attr='maxwidth' value='230' />
+                <format attr='minheight' value='100' />
+                <format attr='maxheight' value='100' />
+                <format attr='aspect' value='0' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='stroke-size' value='0' />
+                <format attr='line-visibility' value='off' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment:nk]</rows>
+        <cols>([federated.0uechxz17ny2qt1a8jqh20n8zj8j].[:Measure Names] * [federated.0uechxz17ny2qt1a8jqh20n8zj8j].[Multiple Values])</cols>
+      </table>
+      <simple-id uuid='{F2B613C4-543C-42F2-B849-005C37B13E72}' />
+    </worksheet>
+    <worksheet name='Last Month Segment'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Custom SQL Query (ref_db)' name='federated.0uechxz17ny2qt1a8jqh20n8zj8j' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0uechxz17ny2qt1a8jqh20n8zj8j'>
+            <column caption='UAP' datatype='integer' name='[Calculation_1957939973534629888]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD([PlayerId])' />
+            </column>
+            <column caption='Count' datatype='integer' name='[Calculation_1957939979827028001]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='{ FIXED [PlayerId]:&#13;&#10;COUNTD([PlayerId])&#13;&#10;}' />
+            </column>
+            <column caption='Last Month Segment' datatype='string' name='[Month_segment]' role='dimension' type='nominal' />
+            <column aggregation='Sum' caption='Player Id' datatype='integer' name='[PlayerId]' role='dimension' type='ordinal' />
+            <column-instance column='[Month_segment]' derivation='None' name='[none:Month_segment:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1957939973534629888]' derivation='User' name='[pcto:usr:Calculation_1957939973534629888:qk:3]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Columns' type='PctTotal' />
+            </column-instance>
+            <column-instance column='[Calculation_1957939979827028001]' derivation='Sum' name='[sum:Calculation_1957939979827028001:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment:nk]'>
+            <groupfilter function='level-members' level='[none:Month_segment:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <natural-sort column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment:nk]' direction='DESC' />
+          <slices>
+            <column>[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[sum:Calculation_1957939979827028001:qk]' field-type='quantitative' max='26000' min='0' range-type='fixed' scope='rows' type='space' />
+            <format attr='display' class='0' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[sum:Calculation_1957939979827028001:qk]' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' value='161' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='legend'>
+            <format attr='col-width' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment:nk]' value='126' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment:nk]' />
+              <text column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment:nk]' />
+              <text column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[pcto:usr:Calculation_1957939973534629888:qk:3]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='false' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[sum:Calculation_1957939979827028001:qk]</rows>
+        <cols />
+        <tooltip-style tooltip-mode='none' />
+      </table>
+      <simple-id uuid='{24535E6D-BA4D-48F9-8179-022684FAA383}' />
+    </worksheet>
+    <worksheet name='Lifetime Segment'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Custom SQL Query (ref_db)' name='federated.0uechxz17ny2qt1a8jqh20n8zj8j' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0uechxz17ny2qt1a8jqh20n8zj8j'>
+            <column caption='UAP' datatype='integer' name='[Calculation_1957939973534629888]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD([PlayerId])' />
+            </column>
+            <column caption='Count' datatype='integer' name='[Calculation_1957939979827028001]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='{ FIXED [PlayerId]:&#13;&#10;COUNTD([PlayerId])&#13;&#10;}' />
+            </column>
+            <column caption='Lifetime Segment' datatype='string' name='[LT_segment]' role='dimension' type='nominal' />
+            <column aggregation='Sum' caption='Player Id' datatype='integer' name='[PlayerId]' role='dimension' type='ordinal' />
+            <column-instance column='[LT_segment]' derivation='None' name='[none:LT_segment:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1957939973534629888]' derivation='User' name='[pcto:usr:Calculation_1957939973534629888:qk:3]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Columns' type='PctTotal' />
+            </column-instance>
+            <column-instance column='[Calculation_1957939979827028001]' derivation='Sum' name='[sum:Calculation_1957939979827028001:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <natural-sort column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:LT_segment:nk]' direction='DESC' />
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[sum:Calculation_1957939979827028001:qk]' field-type='quantitative' max='23000' min='0' range-type='fixed' scope='rows' type='space' />
+            <format attr='display' class='0' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[sum:Calculation_1957939979827028001:qk]' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' value='161' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:LT_segment:nk]' />
+              <text column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:LT_segment:nk]' />
+              <text column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[pcto:usr:Calculation_1957939973534629888:qk:3]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='false' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[sum:Calculation_1957939979827028001:qk]</rows>
+        <cols />
+        <tooltip-style tooltip-mode='none' />
+      </table>
+      <simple-id uuid='{7CB80036-D031-45F8-BA94-D424B6AF7240}' />
+    </worksheet>
+    <worksheet name='Sankey Last Month Segments to Lifetime Segments'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Custom SQL Query (ref_db)' name='federated.0uechxz17ny2qt1a8jqh20n8zj8j' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0uechxz17ny2qt1a8jqh20n8zj8j'>
+            <column caption='T' datatype='real' name='[Calculation_1957939979821056029]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='(INDEX()-25)/4'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column aggregation='Sum' caption='ToPad' datatype='integer' name='[Calculation_1957939979821375518]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='IF [Period] = &apos;Last Month&apos; THEN 1 ELSE 49 END' />
+            </column>
+            <column caption='sigmoid' datatype='real' name='[Calculation_1957939979822153759]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='1/(1+EXP(1)^[Calculation_1957939979821056029])'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='Rank 1' datatype='real' name='[Calculation_1957939979826278432]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='RUNNING_SUM(SUM([Calculation_1957939979827028001]))/TOTAL(SUM([Calculation_1957939979827028001]))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='Count' datatype='integer' name='[Calculation_1957939979827028001]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='{ FIXED [PlayerId]:&#13;&#10;COUNTD([PlayerId])&#13;&#10;}' />
+            </column>
+            <column caption='Curve' datatype='real' name='[Calculation_1957939979827511331]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Calculation_1957939979826278432] + (([Rank 1 (copy)_1957939979827453986]-[Calculation_1957939979826278432])*[Calculation_1957939979822153759])'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='Size' datatype='integer' name='[Calculation_792352101273554947]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='WINDOW_SUM(SUM([Calculation_1957939979827028001]))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='Lifetime Segment' datatype='string' name='[LT_segment]' role='dimension' type='nominal' />
+            <column caption='Last Month Segment' datatype='string' name='[Month_segment]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Period]' role='dimension' type='nominal' />
+            <column aggregation='Sum' caption='Player Id' datatype='integer' name='[PlayerId]' role='dimension' type='ordinal' />
+            <column caption='Rank 2' datatype='real' name='[Rank 1 (copy)_1957939979827453986]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='RUNNING_SUM(SUM([Calculation_1957939979827028001]))/TOTAL(SUM([Calculation_1957939979827028001]))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column aggregation='None' caption='Padded' datatype='integer' name='[ToPad (bin)]' role='dimension' type='ordinal'>
+              <calculation class='bin' decimals='0' formula='[Calculation_1957939979821375518]' peg='0' size='1' />
+            </column>
+            <column-instance column='[LT_segment]' derivation='None' name='[none:LT_segment:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Month_segment]' derivation='None' name='[none:Month_segment:nk]' pivot='key' type='nominal' />
+            <column-instance column='[ToPad (bin)]' derivation='None' name='[none:ToPad (bin):ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_1957939979821056029]' derivation='User' name='[usr:Calculation_1957939979821056029:qk:3]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[ToPad (bin)]' ordering-type='Field' />
+            </column-instance>
+            <column-instance column='[Calculation_1957939979827511331]' derivation='User' name='[usr:Calculation_1957939979827511331:qk:45]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' />
+              <table-calc field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[Calculation_1957939979826278432]' ordering-type='Field'>
+                <order field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[Month_segment]' />
+                <order field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[LT_segment]' />
+                <order field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[ToPad (bin)]' />
+              </table-calc>
+              <table-calc field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[Calculation_1957939979821056029]' ordering-field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[ToPad (bin)]' ordering-type='Field' />
+              <table-calc field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[Rank 1 (copy)_1957939979827453986]' ordering-type='Field'>
+                <order field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[LT_segment]' />
+                <order field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[Month_segment]' />
+                <order field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[ToPad (bin)]' />
+              </table-calc>
+              <table-calc field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[Calculation_1957939979822153759]' ordering-type='Rows' />
+            </column-instance>
+            <column-instance column='[Calculation_792352101273554947]' derivation='User' name='[usr:Calculation_792352101273554947:qk:2]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[ToPad (bin)]' ordering-type='Field' />
+            </column-instance>
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939979821056029:qk:3]' field-type='quantitative' max='5.0' min='-5.0' range-type='fixed' reverse='true' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939979827511331:qk:45]' field-type='quantitative' max='2.3' min='0.0' range-type='fixed' scope='rows' type='space' />
+            <format attr='display' class='0' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939979821056029:qk:3]' scope='cols' value='false' />
+            <format attr='display' class='0' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939979827511331:qk:45]' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <size column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_792352101273554947:qk:2]' />
+              <lod column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:ToPad (bin):ok]' />
+              <color column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment:nk]' />
+              <lod column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:LT_segment:nk]' />
+              <path column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:ToPad (bin):ok]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='4.2105045318603516' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939979827511331:qk:45]</rows>
+        <cols>[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939979821056029:qk:3]</cols>
+        <show-full-range>
+          <column>[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[ToPad (bin)]</column>
+        </show-full-range>
+        <tooltip-style tooltip-mode='none' />
+      </table>
+      <simple-id uuid='{6BF629B8-1281-4083-B0D1-CAC68437E4AC}' />
+    </worksheet>
+    <worksheet name='UAP per Count and Last month segment'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#000000' fontsize='12'>UAP &amp; AVERAGE RFM BY LAST MONTH SEGMENTS PER CURRENCY</run>
+            <run>Æ&#10;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Custom SQL Query (ref_db)' name='federated.0uechxz17ny2qt1a8jqh20n8zj8j' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0uechxz17ny2qt1a8jqh20n8zj8j'>
+            <column caption='UAP' datatype='integer' name='[Calculation_1957939973534629888]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD([PlayerId])' />
+            </column>
+            <column caption='Last Month Average Recency' datatype='real' name='[Calculation_1957939973856686082]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='AVG([Month_Recency])' />
+            </column>
+            <column caption='Last Month Average Frequency' datatype='real' name='[Calculation_1957939973857140739]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='AVG([Month_Bet_Count])' />
+            </column>
+            <column caption='Last Month Average CGR $' datatype='real' name='[Calculation_1957939973857271812]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='AVG([Month_CGR_USD])' />
+            </column>
+            <column caption='Last Month Average Handle $' datatype='real' name='[Calculation_1957939973858217989]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='AVG([Month_Handle_USD])' />
+            </column>
+            <column datatype='string' name='[Currency]' role='dimension' type='nominal' />
+            <column caption='Last Month Bet Count' datatype='integer' name='[Month_Bet_Count]' role='measure' type='quantitative' />
+            <column caption='Last Month CGR USD' datatype='real' name='[Month_CGR_USD]' role='measure' type='quantitative' />
+            <column caption='Last Month Handle USD ' datatype='real' name='[Month_Handle_USD]' role='measure' type='quantitative' />
+            <column caption='Last Month Recency' datatype='real' name='[Month_Recency]' role='measure' type='quantitative' />
+            <column caption='Last Month Segment per Currency' datatype='string' name='[Month_segment_curr]' role='dimension' type='nominal' />
+            <column aggregation='Sum' caption='Player Id' datatype='integer' name='[PlayerId]' role='dimension' type='ordinal' />
+            <column-instance column='[Currency]' derivation='None' name='[none:Currency:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Month_segment_curr]' derivation='None' name='[none:Month_segment_curr:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1957939973534629888]' derivation='User' name='[usr:Calculation_1957939973534629888:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1957939973856686082]' derivation='User' name='[usr:Calculation_1957939973856686082:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1957939973857140739]' derivation='User' name='[usr:Calculation_1957939973857140739:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1957939973857271812]' derivation='User' name='[usr:Calculation_1957939973857271812:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1957939973858217989]' derivation='User' name='[usr:Calculation_1957939973858217989:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973534629888:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973856686082:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973857140739:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973858217989:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973857271812:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973534629888:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973856686082:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973857140739:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973858217989:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973857271812:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='categorical' column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Currency:nk]'>
+            <groupfilter function='level-members' level='[none:Currency:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <natural-sort column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment_curr:nk]' direction='DESC' />
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Currency:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973857140739:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Currency:nk]</column>
+            <column>[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='height' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973534629888:qk]' value='17' />
+            <format attr='display' class='0' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[Multiple Values]' scope='cols' value='false' />
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+            <format attr='tick-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973857271812:qk]' value='c&quot;$&quot;#,##0;-&quot;$&quot;#,##0' />
+            <format attr='text-format' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973858217989:qk]' value='c&quot;$&quot;#,##0;-&quot;$&quot;#,##0' />
+            <format attr='font-size' value='8' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Currency:nk]' value='48' />
+            <format attr='height-header' value='10' />
+            <format attr='height' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[:Measure Names]' value='21' />
+            <format attr='border-width' data-class='total' value='0' />
+            <format attr='border-style' data-class='total' value='none' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-align' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment_curr:nk]' value='center' />
+            <format attr='vertical-align' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment_curr:nk]' value='center' />
+            <format attr='color' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[:Measure Names]' value='#000000' />
+            <format attr='text-align' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[:Measure Names]' value='center' />
+            <format attr='vertical-align' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[:Measure Names]' value='center' />
+            <format attr='color' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment_curr:nk]' value='#000000' />
+            <format attr='text-format' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973857271812:qk]' value='n&quot;$&quot;#,##0;-&quot;$&quot;#,##0' />
+            <format attr='font-size' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[:Measure Names]' value='9' />
+            <format attr='font-family' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[:Measure Names]' value='Calibri' />
+            <format attr='font-weight' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[:Measure Names]' value='bold' />
+            <format attr='text-format' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973534629888:qk]' value='c&quot;₱&quot;#,##0.00;-&quot;₱&quot;#,##0.00' />
+            <format attr='text-format' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973858217989:qk]' value='c&quot;$&quot;#,##0;-&quot;$&quot;#,##0' />
+            <format attr='text-format' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[Multiple Values]' value='c&quot;₱&quot;#,##0.00;-&quot;₱&quot;#,##0.00' />
+            <format attr='font-size' value='8' />
+            <format attr='font-size' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment_curr:nk]' value='9' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-width' data-class='total' value='0' />
+            <format attr='border-style' data-class='total' value='none' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+            <format attr='font-family' value='Calibri' />
+            <format attr='font-size' value='8' />
+          </style-rule>
+          <style-rule element='dropline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='header-div'>
+            <format attr='stroke-size' scope='rows' value='1' />
+            <format attr='line-visibility' scope='rows' value='on' />
+            <format attr='line-pattern-only' scope='rows' value='solid' />
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='background-color' value='#ffffff' />
+            <format attr='font-family' value='Calibri' />
+            <format attr='font-size' value='15' />
+          </style-rule>
+          <style-rule element='legend'>
+            <format attr='col-width' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment_curr:nk]' value='130' />
+          </style-rule>
+          <style-rule element='tooltip'>
+            <format attr='font-family' value=' Calibri' />
+            <format attr='font-size' value='10' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment_curr:nk]' />
+              <lod column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973534629888:qk]' />
+              <tooltip column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973856686082:qk]' />
+              <tooltip column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973857140739:qk]' />
+              <tooltip column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973858217989:qk]' />
+              <tooltip column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973857271812:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Currency:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Currency:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Last Month Segment per Currency:	</run>
+                <run bold='true'><![CDATA[<[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Currency:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>UAP:&#9;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Last Month Average Recency:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973856686082:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Last Month Average Frequency:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973857140739:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Last Month Average Handle $:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973858217989:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Last Month Average CGR $:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973857271812:qk]>]]></run>
+                <run>Æ&#10;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='stroke-size' value='0' />
+                <format attr='line-visibility' value='off' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment_curr:nk] / [federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Currency:nk])</rows>
+        <cols>([federated.0uechxz17ny2qt1a8jqh20n8zj8j].[:Measure Names] * [federated.0uechxz17ny2qt1a8jqh20n8zj8j].[Multiple Values])</cols>
+      </table>
+      <simple-id uuid='{B29A726D-B836-4A9B-9EDC-754C4221767B}' />
+    </worksheet>
+    <worksheet name='UAP vs. Last Month Segments by Main Vendor'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontsize='12'>UAP VS. LAST MONTH SEGMENT BY MAIN VENDOR</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Custom SQL Query (ref_db)' name='federated.0uechxz17ny2qt1a8jqh20n8zj8j' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0uechxz17ny2qt1a8jqh20n8zj8j'>
+            <column caption='UAP' datatype='integer' name='[Calculation_1957939973534629888]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD([PlayerId])' />
+            </column>
+            <column caption='Last Month Average Recency' datatype='real' name='[Calculation_1957939973856686082]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='AVG([Month_Recency])' />
+            </column>
+            <column caption='Last Month Average Frequency' datatype='real' name='[Calculation_1957939973857140739]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='AVG([Month_Bet_Count])' />
+            </column>
+            <column caption='Last Month Average CGR $' datatype='real' name='[Calculation_1957939973857271812]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='AVG([Month_CGR_USD])' />
+            </column>
+            <column caption='Last Month Average Handle $' datatype='real' name='[Calculation_1957939973858217989]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='AVG([Month_Handle_USD])' />
+            </column>
+            <column caption='LD Main Vendor' datatype='string' name='[LD_main_vendor]' role='dimension' type='nominal' />
+            <column caption='Last Month Bet Count' datatype='integer' name='[Month_Bet_Count]' role='measure' type='quantitative' />
+            <column caption='Last Month CGR USD' datatype='real' name='[Month_CGR_USD]' role='measure' type='quantitative' />
+            <column caption='Last Month Handle USD ' datatype='real' name='[Month_Handle_USD]' role='measure' type='quantitative' />
+            <column caption='Last Month Recency' datatype='real' name='[Month_Recency]' role='measure' type='quantitative' />
+            <column caption='Last Month Segment' datatype='string' name='[Month_segment]' role='dimension' type='nominal' />
+            <column aggregation='Sum' caption='Player Id' datatype='integer' name='[PlayerId]' role='dimension' type='ordinal' />
+            <column-instance column='[LD_main_vendor]' derivation='None' name='[none:LD_main_vendor:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Month_segment]' derivation='None' name='[none:Month_segment:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1957939973534629888]' derivation='User' name='[pcto:usr:Calculation_1957939973534629888:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' type='PctTotal' />
+            </column-instance>
+            <column-instance column='[Calculation_1957939973534629888]' derivation='User' name='[usr:Calculation_1957939973534629888:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1957939973856686082]' derivation='User' name='[usr:Calculation_1957939973856686082:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1957939973857140739]' derivation='User' name='[usr:Calculation_1957939973857140739:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1957939973857271812]' derivation='User' name='[usr:Calculation_1957939973857271812:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1957939973858217989]' derivation='User' name='[usr:Calculation_1957939973858217989:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <natural-sort column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment:nk]' direction='DESC' />
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='height' value='557' />
+            <format attr='width' value='961' />
+            <format attr='text-align' value='center' />
+            <format attr='vertical-align' value='center' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-align' value='center' />
+            <format attr='vertical-align' value='center' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='size-bar' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973534629888:qk]' field-type='quantitative' max-size='1' min-size='0.005' type='centersize' />
+            <encoding attr='size-bar' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[pcto:usr:Calculation_1957939973534629888:qk]' field-type='quantitative' max-size='1' min-size='0.005' type='centersize' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='alternate-text' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973534629888:qk]' value='0' />
+            <format attr='display-alternate-text' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973534629888:qk]' value='true' />
+            <format attr='omit-on-special' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973534629888:qk]' value='false' />
+            <format attr='break-on-special' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973534629888:qk]' value='false' />
+            <format attr='show-null-value-warning' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973534629888:qk]' value='false' />
+            <format attr='alternate-text' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[pcto:usr:Calculation_1957939973534629888:qk]' value='0' />
+            <format attr='display-alternate-text' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[pcto:usr:Calculation_1957939973534629888:qk]' value='true' />
+            <format attr='omit-on-special' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[pcto:usr:Calculation_1957939973534629888:qk]' value='false' />
+            <format attr='break-on-special' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[pcto:usr:Calculation_1957939973534629888:qk]' value='false' />
+            <format attr='show-null-value-warning' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[pcto:usr:Calculation_1957939973534629888:qk]' value='false' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='font-family' value='Calibri' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='font-family' value='Calibri' />
+            <format attr='font-weight' value='bold' />
+            <format attr='color' value='#000000' />
+            <format attr='font-size' value='15' />
+          </style-rule>
+          <style-rule element='legend'>
+            <format attr='col-width' field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment:nk]' value='140' />
+          </style-rule>
+          <style-rule element='tooltip'>
+            <format attr='font-family' value='Calibri' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment:nk]' />
+              <size column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973534629888:qk]' />
+              <lod column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973856686082:qk]' />
+              <lod column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973857140739:qk]' />
+              <lod column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973858217989:qk]' />
+              <lod column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939973857271812:qk]' />
+              <text column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment:nk]' />
+              <text column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:LD_main_vendor:nk]' />
+              <text column='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[pcto:usr:Calculation_1957939973534629888:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{F24533A3-E1E2-4578-BB1E-715437F4E804}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Live Dealer Profitability Segment-Last Month'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>LIVE DEALER PLAYER SEGMENTATION - LAST MONTH</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style>
+        <style-rule element='dash-title'>
+          <format attr='font-family' value='Tableau Bold' />
+          <format attr='color' value='#ffffff' />
+          <format attr='background-color' value='#31405f' />
+        </style-rule>
+      </style>
+      <size maxheight='900' maxwidth='1600' minheight='900' minwidth='1600' preset-index='8' sizing-mode='fixed' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98222' id='48' param='horz' type-v2='layout-flow' w='99000' x='500' y='889'>
+            <zone h='98222' id='23' type-v2='layout-basic' w='99000' x='500' y='889'>
+              <zone h='91555' id='17' param='horz' type-v2='layout-flow' w='99000' x='500' y='7556'>
+                <zone h='91555' id='15' type-v2='layout-basic' w='99000' x='500' y='7556'>
+                  <zone h='91555' id='9' param='horz' type-v2='layout-flow' w='57812' x='41688' y='7556'>
+                    <zone fixed-size='895' h='90667' id='10' is-fixed='true' param='vert' type-v2='layout-flow' w='57312' x='41938' y='8000'>
+                      <zone fixed-size='233' h='26778' id='13' is-fixed='true' name='Averages per Last month segment' w='57312' x='41938' y='8000'>
+                        <layout-cache has-max-size-w='true' maxwidth='1276' minwidth='1276' type-h='cell' type-w='scalable' />
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone fixed-size='24' h='3556' id='21' is-fixed='true' param='C:/Users/raymart.biasbas/Pictures/Horizontal.png' type-v2='bitmap' w='57312' x='41938' y='34778'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone fixed-size='722' h='60333' id='43' is-fixed='true' name='UAP per Count and Last month segment' w='57312' x='41938' y='38334'>
+                        <layout-cache minwidth='630' type-h='cell' type-w='scalable' />
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='0' />
+                      </zone-style>
+                    </zone>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone h='91555' id='20' param='C:/Users/raymart.biasbas/Pictures/Vertical (1).png' type-v2='bitmap' w='2000' x='39688' y='7556'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone h='91555' id='44' param='vert' type-v2='layout-flow' w='39188' x='500' y='7556'>
+                    <zone fixed-size='374' h='42445' id='46' is-fixed='true' name='UAP vs. Last Month Segments by Main Vendor' w='39188' x='500' y='7556'>
+                      <layout-cache type-h='cell' type-w='fixed' />
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone fixed-size='24' h='3556' id='49' is-fixed='true' name='UAP vs. Last Month Segments by Main Vendor' pane-specification-id='0' param='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment:nk]' show-title='false' type-v2='color' w='39188' x='500' y='50001'>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone fixed-size='24' h='3556' id='50' is-fixed='true' param='C:/Users/raymart.biasbas/Pictures/Horizontal.png' type-v2='bitmap' w='39188' x='500' y='53557'>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                  </zone>
+                </zone>
+              </zone>
+              <zone fixed-size='60' h='6667' id='8' is-fixed='true' type-v2='title' w='99000' x='500' y='889'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='0' />
+                  <format attr='padding' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='37556' id='59' name='Lifetime Segment' show-title='false' w='9375' x='30500' y='58889' />
+        <zone h='37556' id='55' name='Last Month Segment' show-title='false' w='9375' x='625' y='58889' />
+        <zone h='2667' id='56' leg-item-layout='horz' name='Last Month Segment' pane-specification-id='2' param='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment:nk]' show-title='false' type-v2='color' w='38563' x='1063' y='97000' />
+        <zone h='37556' id='57' name='Sankey Last Month Segments to Lifetime Segments' show-title='false' w='22625' x='8938' y='58889' />
+        <zone forceUpdate='true' h='3000' id='54' type-v2='text' w='38313' x='1063' y='56000'>
+          <formatted-text>
+            <run bold='true' fontcolor='#000000' fontname='Calibri' fontsize='12'>LAST MONTH SEGMENT VS. LIFETIME SEGMENT</run>
+          </formatted-text>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <layout-options>
+            <title>
+              <formatted-text>
+                <run>LIVE DEALER PLAYER SEGMENTATION - LAST MONTH</run>
+              </formatted-text>
+            </title>
+          </layout-options>
+          <size maxheight='2350' minheight='2350' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='75' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98222' id='74' param='vert' type-v2='layout-flow' w='99000' x='500' y='889'>
+                <zone fixed-size='60' h='6667' id='8' type-v2='title' w='99000' x='500' y='889'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='42445' id='46' is-fixed='true' name='UAP vs. Last Month Segments by Main Vendor' w='39188' x='500' y='7556'>
+                  <layout-cache type-h='cell' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='24' h='3556' id='49' name='UAP vs. Last Month Segments by Main Vendor' pane-specification-id='0' param='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment:nk]' show-title='false' type-v2='color' w='39188' x='500' y='50001'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='91555' id='20' is-fixed='true' param='C:/Users/raymart.biasbas/Pictures/Vertical (1).png' type-v2='bitmap' w='2000' x='39688' y='7556'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='233' h='26778' id='13' is-fixed='true' name='Averages per Last month segment' w='57312' x='41938' y='8000'>
+                  <layout-cache has-max-size-w='true' maxwidth='1276' minwidth='1276' type-h='cell' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='24' h='3556' id='21' is-fixed='true' param='C:/Users/raymart.biasbas/Pictures/Horizontal.png' type-v2='bitmap' w='57312' x='41938' y='34778'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='60333' id='43' is-fixed='true' name='UAP per Count and Last month segment' w='57312' x='41938' y='38334'>
+                  <layout-cache minwidth='630' type-h='cell' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='24' h='3556' id='50' is-fixed='true' param='C:/Users/raymart.biasbas/Pictures/Horizontal.png' type-v2='bitmap' w='39188' x='500' y='53557'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='3000' id='54' type-v2='text' w='38313' x='1063' y='56000'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#000000' fontname='Calibri' fontsize='12'>LAST MONTH SEGMENT VS. LIFETIME SEGMENT</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='37556' id='55' is-fixed='true' name='Last Month Segment' show-title='false' w='9375' x='625' y='58889'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='2667' id='56' leg-item-layout='horz' name='Last Month Segment' pane-specification-id='2' param='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment:nk]' show-title='false' type-v2='color' w='38563' x='1063' y='97000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='37556' id='57' is-fixed='true' name='Sankey Last Month Segments to Lifetime Segments' show-title='false' w='22625' x='8938' y='58889'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='37556' id='59' is-fixed='true' name='Lifetime Segment' show-title='false' w='9375' x='30500' y='58889'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{64684386-8DF9-4D8B-AB2F-16933CC43BEA}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='dashboard' maximized='true' name='Live Dealer Profitability Segment-Last Month'>
+      <viewpoints>
+        <viewpoint name='Averages per Last month segment'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Last Month Segment'>
+          <zoom type='entire-view' />
+          <highlight field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment:nk]'>
+            <bucket-selection />
+          </highlight>
+        </viewpoint>
+        <viewpoint name='Lifetime Segment'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Sankey Last Month Segments to Lifetime Segments'>
+          <zoom type='entire-view' />
+          <highlight field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_792352101273554947:qk:2]' type='size'>
+            <bucket-selection />
+          </highlight>
+        </viewpoint>
+        <viewpoint name='UAP per Count and Last month segment'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='UAP vs. Last Month Segments by Main Vendor'>
+          <zoom type='entire-view' />
+          <highlight field='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment:nk]'>
+            <bucket-selection />
+          </highlight>
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{DFB9CFE5-FD4B-41E8-8246-AE2E05B2E9E4}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Averages per Last month segment'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='6' param='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[Multiple Values]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{70635808-D9A7-4D21-B91C-BD6433608F3A}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Last Month Segment'>
+      <cards>
+        <edge name='left'>
+          <strip size='240'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='183'>
+            <card pane-specification-id='2' param='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <selection-collection>
+          <node-selection select-tuples='false'>
+            <oriented-node-reference orientation='vertical'>
+              <node-reference>
+                <axis>[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[sum:Calculation_1957939979827028001:qk]</axis>
+              </node-reference>
+              <page-reference />
+            </oriented-node-reference>
+          </node-selection>
+        </selection-collection>
+      </viewpoint>
+      <simple-id uuid='{78A23FC8-1E8C-44B4-8CC0-3DFEEB958435}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Lifetime Segment'>
+      <cards>
+        <edge name='left'>
+          <strip size='240'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='100'>
+            <card pane-specification-id='2' param='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:LT_segment:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <selection-collection>
+          <node-selection select-tuples='false'>
+            <oriented-node-reference orientation='vertical'>
+              <node-reference>
+                <axis>[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[sum:Calculation_1957939979827028001:qk]</axis>
+              </node-reference>
+              <page-reference />
+            </oriented-node-reference>
+          </node-selection>
+        </selection-collection>
+      </viewpoint>
+      <simple-id uuid='{FE6D8EA1-CBEE-4225-AA31-CFD0BD9B7060}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Sankey Last Month Segments to Lifetime Segments'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='100'>
+            <card pane-specification-id='0' param='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_792352101273554947:qk:2]' type='size' />
+            <card pane-specification-id='0' param='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <selection-collection>
+          <node-selection select-tuples='false'>
+            <oriented-node-reference orientation='vertical'>
+              <node-reference>
+                <axis>[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[usr:Calculation_1957939979827511331:qk:45]</axis>
+              </node-reference>
+              <page-reference />
+            </oriented-node-reference>
+          </node-selection>
+        </selection-collection>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment:nk]</field>
+            <field>[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:ToPad (bin):ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{080BD545-76BE-4237-8380-66468A08CA15}' />
+    </window>
+    <window class='worksheet' hidden='true' name='UAP per Count and Last month segment'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='2' param='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment_curr:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{54FE5FDB-D574-4CD4-99FA-2834408438AE}' />
+    </window>
+    <window class='worksheet' hidden='true' name='UAP vs. Last Month Segments by Main Vendor'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='240'>
+            <card pane-specification-id='0' param='[federated.0uechxz17ny2qt1a8jqh20n8zj8j].[none:Month_segment:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{D9607163-C201-4C6B-B858-DDA7E4AE89E0}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Live Dealer Profitability Segment-Last Month' width='192'>
+      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
+      FP4fsfZRidOAA6QAAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>

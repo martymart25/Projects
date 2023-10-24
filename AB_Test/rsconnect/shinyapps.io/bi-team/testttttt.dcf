@@ -1,0 +1,14 @@
+name: testttttt
+title: testttttt
+username:
+account: bi-team
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 9353961
+bundleId: 7442234
+url: https://bi-team.shinyapps.io/testttttt/
+when: 1689039747.64776
+lastSyncTime: 1689039747.64778
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: other.R|test.csv

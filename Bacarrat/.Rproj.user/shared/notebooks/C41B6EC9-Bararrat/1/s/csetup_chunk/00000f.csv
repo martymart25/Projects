@@ -1,0 +1,69 @@
+"0","knitr::opts_chunk$set(echo = FALSE)"
+"0","library(odbc)"
+"0","library(DBI)"
+"0","library(keyring)"
+"0","library(dplyr)"
+"2","
+Attaching package: ‘dplyr’
+
+"
+"2","The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+"
+"2","The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+"
+"0","library(ggplot2)"
+"0","library(DBI)"
+"0","library(plotly)"
+"2","Registered S3 method overwritten by 'data.table':
+  method           from
+  print.data.table     
+"
+"2","
+Attaching package: ‘plotly’
+
+"
+"2","The following object is masked from ‘package:ggplot2’:
+
+    last_plot
+
+"
+"2","The following object is masked from ‘package:stats’:
+
+    filter
+
+"
+"2","The following object is masked from ‘package:graphics’:
+
+    layout
+
+"
+"0","library(tidyr)"
+"0","options(repr.plot.width = 3, repr.plot.height =3)"
+"0","load(""Bacarrat.RData"")"
+"0","df_agg <-df |>"
+"0","  group_by(playerid,username,CurrencyCode) |>"
+"0","  reframe(avg_wager = sum(turnover_usd,na.rm = T)/sum(bet_count,na.rm = T),"
+"0","          bet_count = sum(bet_count,na.rm = T),"
+"0","          banker_win_count = sum(ifelse(BetCode == ""BaBank"",win_bet_count,0),na.rm = T),"
+"0","          player_win_count = sum(ifelse(BetCode == ""BaDeal"",win_bet_count,0),na.rm = T),"
+"0","          banker_ggr_usd = sum(ifelse(BetCode == ""BaBank"",ggr_usd,0),na.rm = T),"
+"0","          player_ggr_usd = sum(ifelse(BetCode == ""BaDeal"",ggr_usd,0),na.rm = T),"
+"0","          banker_turnover_usd = sum(ifelse(BetCode == ""BaBank"",turnover_usd,0),na.rm = T),"
+"0","          player_turnover_usd = sum(ifelse(BetCode == ""BaDeal"",turnover_usd,0),na.rm = T),"
+"0","          max_wager_usd = max(max_wager,na.rm = T),"
+"0","          turnover_usd = sum(turnover_usd,na.rm = T),"
+"0","          ggr_usd = sum(ggr_usd,na.rm = T),"
+"0","          banker_win_pct = as.numeric(banker_win_count/bet_count),"
+"0","          player_win_pct = as.numeric(player_win_count/bet_count),"
+"0","          banker_hold_pct = as.numeric(coalesce(banker_ggr_usd/banker_turnover_usd,0)),"
+"0","          player_hold_pct = as.numeric(coalesce(player_ggr_usd/player_turnover_usd,0))) |>"
+"0","  ungroup()"
+"0",""
+"0","df_filtered <- df_agg |>"
+"0","  filter(bet_count > 5)"

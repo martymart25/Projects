@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Wed Oct 18 17:27:26 CST 2023:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-018b-421c-8236-0000116382d8 
+on database directory memory:C:\Users\raymart.biasbas\Documents\Proyekto\First Deposit vs Second Deposit\databaseName=metastore_db with class loader org.apache.spark.sql.hive.client.IsolatedClientLoader$$anon$1@698b9197 
+Loaded from file:/C:/Users/raymart.biasbas/AppData/Local/spark/spark-2.4.3-bin-hadoop2.7/jars/derby-10.12.1.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_381-b09
+user.dir=C:\Users\raymart.biasbas\Documents\Proyekto\First Deposit vs Second Deposit
+os.name=Windows Server 2019
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

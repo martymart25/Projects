@@ -1,0 +1,67 @@
+"0",""
+"0","con <- dbConnect(odbc(),""DA"","
+"0","                   uid = key_get(""db_user""),"
+"0","                   pwd = key_get(""db_pass""),"
+"0","                  encoding = ""UTF-8"")"
+"0",""
+"0","ld_df_raw <- dbGetQuery(con,"""
+"0","              With lt as ("
+"0","              SELECT"
+"0","              Playerid"
+"0","              ,Currencycode"
+"0","              ,[Game Type] "
+"0","              ,[Vendor Name] "
+"0","              ,sum([Active Days Per Month]) LT_Active_Days"
+"0","              ,sum([Bet Count]) LT_Bet_Count"
+"0","              ,sum([Turnover Usd]) LT_Turnover_USD"
+"0","              ,sum([Ggr Usd]) LT_GGR_USD"
+"0","              FROM ref_db.ray.ld_players_data (nolock)"
+"0","              GROUP BY"
+"0","              Playerid"
+"0","              ,Currencycode"
+"0","              ,[Game Type] "
+"0","              ,[Vendor Name]"
+"0","              )"
+"0","              SELECT "
+"0","              t.*"
+"0","              ,lt.LT_Active_Days"
+"0","              ,lt.LT_Bet_Count"
+"0","              ,lt.LT_Turnover_USD"
+"0","              ,lt.LT_GGR_USD"
+"0","              FROM ref_db.ray.ld_players_data t (nolock) "
+"0","              LEFT JOIN lt on t.Playerid = lt.Playerid"
+"0","              and t.Currencycode = lt.Currencycode"
+"0","              and t.[Game Type] = lt.[Game Type]"
+"0","              and t.[Vendor Name] = lt.[Vendor Name]"
+"0","              WHERE 1=1"
+"0","              # AND [Activity Month] = DATEADD(day,1,EOMONTH(cast(dateadd(hour,8,GETDATE()) as DATE),-2))"
+"0","              AND lt.LT_Bet_Count > 1"
+"0","                        "")"
+"2","Error: nanodbc/nanodbc.cpp:1752: 42000: [Microsoft][ODBC SQL Server Driver][SQL Server]Incorrect syntax near '#'.  [Microsoft][ODBC SQL Server Driver][SQL Server]Statement(s) could not be prepared. 
+<SQL> '
+              With lt as (
+              SELECT
+              Playerid
+              ,Currencycode
+              ,[Game Type] 
+              ,[Vendor Name] 
+              ,sum([Active Days Per Month]) LT_Active_Days
+              ,sum([Bet Count]) LT_Bet_Count
+              ,sum([Turnover Usd]) LT_Turnover_USD
+              ,sum([Ggr Usd]) LT_GGR_USD
+              FROM ref_db.ray.ld_players_data (nolock)
+              GROUP BY
+              Playerid
+              ,Currencycode
+              ,[Game Type] 
+              ,[Vendor Name]
+              )
+              SELECT 
+              t.*
+              ,lt.LT_Active_Days
+              ,lt.LT_Bet_Count
+              ,lt.LT_Turnover_USD
+              ,lt.LT_GGR_USD
+              FROM ref_db.ray.ld_players_data t (nolock) 
+             
+"

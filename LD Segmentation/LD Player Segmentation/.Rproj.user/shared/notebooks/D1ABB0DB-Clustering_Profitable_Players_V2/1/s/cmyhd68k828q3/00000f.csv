@@ -1,0 +1,35 @@
+"0","library(DBI)
+library(odbc)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(keyring)
+library(stats)
+library(kableExtra)
+"
+"2","
+Attaching package: ‘kableExtra’
+
+"
+"2","The following object is masked from ‘package:dplyr’:
+
+    group_rows
+
+"
+"0","library(gridExtra)"
+"2","
+Attaching package: ‘gridExtra’
+
+"
+"2","The following object is masked from ‘package:dplyr’:
+
+    combine
+
+"
+"0","library(grid)"
+"0","library(scales)"
+"0","library(ggcorrplot)"
+"0","library(factoextra)"
+"0","library(fdm2id)"
+"2","Error in library(fdm2id) : there is no package called ‘fdm2id’
+"

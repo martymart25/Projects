@@ -1,0 +1,47 @@
+"0","setwd(""C://Users//raymart.biasbas//Documents//Proyekto//LD Segmentation//LD Player Segmentation"")"
+"0",""
+"0","getwd()"
+"1","[1]"
+"1"," ""C:/Users/raymart.biasbas/Documents/Proyekto/LD Segmentation/LD Player Segmentation"""
+"1","
+"
+"0","if (!require(DBI)) install.packages(""DBI"")"
+"2","Loading required package: DBI
+"
+"0","if (!require(odbc)) install.packages(""odbc"")"
+"2","Loading required package: odbc
+"
+"0","if (!require(keyring)) install.packages(""keyring"")"
+"2","Loading required package: keyring
+"
+"0","if (!require(dplyr)) install.packages(""dplyr"")"
+"2","Loading required package: dplyr
+"
+"2","
+Attaching package: ‘dplyr’
+
+"
+"2","The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+"
+"2","The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+"
+"0","if (!require(factoextra)) install.packages(""factoextra"")"
+"2","Loading required package: factoextra
+"
+"2","Loading required package: ggplot2
+"
+"2","Welcome! Want to learn more? See two factoextra-related books at https://goo.gl/ve3WBa
+"
+"0","if (!require(ggplot2)) install.packages(""ggplot2"")"
+"0","if (!require(tidyr)) install.packages(""tidyr"")"
+"2","Loading required package: tidyr
+"
+"0","if (!require(datawizard)) install.packages(""datawizard"")"
+"2","Loading required package: datawizard
+"
